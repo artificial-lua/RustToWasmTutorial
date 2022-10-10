@@ -1,0 +1,15 @@
+version: "3"
+services:
+  rust_builder:
+    container_name: rust_builder
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    ulimits:
+      core:
+        hard: 0
+        soft: 0
+    # command: tail -f /dev/null
+    ports:
+      - 8080:80
